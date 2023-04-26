@@ -1,0 +1,77 @@
+@font-face {
+    font-family: "Nunito-Regular";
+    src: url('assets/fonts/Nunito-Regular.ttf');
+}
+body {
+    margin: 0;
+    font-family: Nunito-Regular;
+}
+/*header progression bar*/
+.header {
+    height: 250px;
+  }
+  .header .progression-bar {
+      width: 100%;
+      height: 10px;
+      background-color: #f0c3be;
+      position: relative;
+      margin-bottom: 2rem;
+  }
+  .header .progression-bar .progression {
+      width: calc( (100% / 16) * 1 )  ;
+      height: 10px;
+      background-color: #DF6857;
+      position: absolute;
+      top: 0;
+      left: 0;
+      animation: 1s  1s forwards bar;
+  }
+@keyframes bar {
+from {
+    width: calc( (100% / 16) * 1 )  ;
+}
+to {
+    width: calc( (100% / 16) * 2 )  ;
+}
+}
+  .header > p {
+      background-color: #DF6857;
+      margin: 0 auto;
+      width: fit-content;
+     padding: 5px 10px;
+     border-radius: 30px;
+     color: white;
+  }
+  .header > h1 {
+      text-align: center;
+      font-size: 25px;
+      margin-top: 3rem;
+  }
+  /* info container*/
+.container {
+    width: 100%;
+    height: fit-content
+}
+.info-container {
+    margin: 0 auto;
+    width: fit-content;
+    height: fit-content;
+    background-color: #df6957d1;
+    padding: 1rem 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 1px 1px 5px 2px  rgba(34, 3, 3, 0.05);
+    border-radius: 5px;
+    
+}
+.info-container h3 {
+    text-align: center;
+}
+hr {
+    border: 1px solid rgba(255, 255, 255, 0.863);
+}
+.info-container p {
+    font-weight: bold;
+}
+.info-container  p span {
+    font-weight: normal;
+}

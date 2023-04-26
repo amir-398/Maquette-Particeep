@@ -8,13 +8,16 @@
   </head>
   <body>
     <div class="header">
+      <div class="progression-bar">
+        <div class="progression"></div>
+      </div>
       <p>1/16</p>
       <h1>Vos informations</h1>
     </div>
     <form action="">
       <div class="form">
-        <div>
-          <label for="firstName">PRENOM</label>
+        <div class="input-group">
+          <label for="firstName">PRÉNOM *</label>
           <input
             type="text"
             id="firstName"
@@ -23,8 +26,8 @@
             required
           />
         </div>
-        <div>
-          <label for="name">NOM</label>
+        <div class="input-group">
+          <label for="name">NOM *</label>
           <input
             type="text"
             id="name"
@@ -33,8 +36,8 @@
             required
           />
         </div>
-        <div>
-          <label for="address">ADRESSE COMPLETE</label>
+        <div class="input-group">
+          <label for="address">ADRESSE COMPLÈTE *</label>
           <input
             type="text"
             id="address"
@@ -43,18 +46,18 @@
             required
           />
         </div>
-        <div class="BirthDate-container">
-          <label for="BirthDate">DATE DE NAISSANCE</label>
+        <div class="input-group birthDate-container">
+          <label for="BirthDate">DATE DE NAISSANCE *</label>
           <input
             type="date"
-            id="BirthDate"
-            name="BirthDate"
+            id="birthDate"
+            name="birthDate"
             placeholder="--/--/----"
             required
           />
         </div>
-        <div>
-          <label for="PhoneNumber">NUMERO DE TELEPHONE</label>
+        <div class="input-group">
+          <label for="PhoneNumber">NUMERO DE TÉLÉPHONE *</label>
           <div style="width: 100%">
             <div class="phoneNumber-container">
               <img
@@ -80,49 +83,49 @@
             <div class="input-container">
               <input
                 type="tel"
-                id="PhoneNumber"
-                name="PhoneNumber"
+                id="phoneNumber"
+                name="phoneNumber"
                 placeholder="06 01 02 03 04"
                 required
               />
             </div>
           </div>
         </div>
-        <div>
-          <label for="answer-yes answer-no">QUESTION A CHOIX MULTIPLES</label>
+        <div class="input-group">
+          <label for="answer-yes answer-no">QUESTION À CHOIX MULTIPLES *</label>
           <div>
-            <input id="answer-yes" type="radio" name="answer" />
+            <input id="answer-yes" type="radio" name="answer-yes" />
             <label for="answer-yes">Oui</label>
           </div>
           <div>
-            <input id="answer-no" type="radio" name="answer" />
+            <input id="answer-no" type="radio" name="answer-no" />
             <label for="answer-no">Non</label>
           </div>
         </div>
-        <div>
-          <label for="mail">ADRESSE MAIL</label>
+        <div class="input-group">
+          <label for="mail">ADRESSE MAIL *</label>
           <input
             type="email"
-            id="e-mail"
-            name="e-mail"
+            id="email"
+            name="email"
             placeholder="Donnez votre réponse ici"
             required
           />
         </div>
-        <div class="toggle-container">
+        <div class="input-group toggle-container">
           <p>
             <strong> Voulez-vous recevoir les notifications mail ?</strong>
           </p>
           <div class="toggle">
-            <input type="checkbox" id="toggle" checked />
+            <input type="checkbox" id="toggle" name="checkbox" />
             <label for="toggle"></label>
           </div>
         </div>
-        <div class="file-input-container">
-          <label for="file">PIECE D'IDENDITE</label>
+        <div class="input-group file-input-container">
+          <label for="file">PIÈCE D'IDENDITÉ. *</label>
           <div class="uploader">
             <div class="upload-wrapper">
-              <img src="assets/icons/telecharger.png" alt="telecharger" />
+              <img src="assets/icons/upload-cloud.png" alt="telecharger" />
               <p>Glissez votre fichier dans cette zone</p>
             </div>
             <input id="file" name="file" type="file" />
@@ -131,7 +134,9 @@
       </div>
       <hr />
       <div class="form-footer">
-        <button class="submit-btn">Suivant</button>
+        <button class="submit-btn" disabled>
+          <a href="index2.html">Suivant</a>
+        </button>
       </div>
     </form>
     <script src="script.js"></script>
