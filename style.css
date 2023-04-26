@@ -1,0 +1,210 @@
+body {
+    margin: 0;
+}
+.header {
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+.header > p {
+    background-color: #DF6857;
+    margin: 0 auto;
+    width: fit-content;
+   padding: 5px 10px;
+   border-radius: 30px;
+   color: white;
+}
+.header > h1 {
+    text-align: center;
+    font-size: 25px;
+    margin-top: 3rem;
+}
+/* formulaire */
+.form {
+    padding: 0 2rem;
+    background-color: red;
+}
+
+input[type="text"], input[type="date"], input[type="tel"], input[type="email"]  {
+    width: calc(100% - 2rem);
+    padding: 15px 10px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin : 0.5rem 0px 2rem 0px;
+    position: relative;
+}
+input[type="date"]::-webkit-datetime-edit-fields-wrapper {
+    display: none;
+  }
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0;
+    position : absolute;
+    right : 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+  }
+
+  /*input telephone*/
+  input[type="tel"] {
+    border-radius: 0 5px 5px 0px !important  ;
+  }
+ 
+  .phoneNumber-container {
+    position: relative;
+    width: 20%;
+    display: inline-block;
+    margin-right: -5px;
+  }
+  .input-container {
+    display: inline-block;
+    width: 80%;
+  }
+  #selectPrefix{
+    width: 100%;
+    height: 3rem;
+    border-radius: 5px 0 0 5px;
+    display: inline;
+  }
+  select[name="prefix"] {
+    appearance: none;
+    -webkit-appearance: none;
+}
+  .prefix-flag  {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0.5rem;
+  }
+  .prefix-arrows {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+   .BirthDate-container{
+    position:relative;
+  }
+  .BirthDate-container:after {
+        content: url("assets/icons/calendar.png");
+        display: block;
+        font-size:2rem;
+        color:STEELBLUE;
+        background: none;
+        background: url('') no-repeat;
+        background-size: 10%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -5px;
+  } 
+  input[type="date"]:before {
+    content: attr(placeholder);
+    color: #999;
+    display: inline-block;
+  }
+  /*toggler*/
+    .toggle-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+    }
+  .toggle input[type="checkbox"] {
+    display: none;
+  }
+  .toggle {
+    display: inline-block;
+  }
+  .toggle label {
+    display: block;
+    position: relative;
+    width: 50px;
+    height: 20px;
+    background-color: grey;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+  
+  .toggle label:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0px;
+    width: 26px;
+    height: 26px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: all 0.3s;
+  }
+  
+  .toggle input[type="checkbox"]:checked + label {
+    background-color: #DF6857;
+  }
+  
+  .toggle input[type="checkbox"]:checked + label:after {
+    transform: translateX(25px) translateY(-50%);
+  }
+  /* uploader*/
+  .file-input-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+  }
+  .file-input-container .uploader {
+    width: 100%;
+    position: relative;
+    border: 1px dashed grey;
+    border-radius: 5px;
+  }
+  .uploader img {
+    width: 40px;
+    height: 40px;
+  }
+  .file-input-container input[type="file"] {
+    display: flex;
+    border: 1px dashed grey;
+    border-radius: 5px;
+    width: 100%;
+    padding: 5rem 0;
+    cursor: pointer;
+    z-index: 100;
+    opacity: 0;
+  }
+  .upload-wrapper {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .file-input-container label {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+ /* submit btn */
+ .form-footer {
+    background-color: pink;
+    height: 5rem;
+    display: flex;
+    justify-content:  flex-end;
+    align-items: center;
+ }
+    .submit-btn {
+        padding: 10px 25px;
+        margin-right: 1rem;
+    }

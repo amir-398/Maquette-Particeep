@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Maquette-Particeep</title>
+  </head>
+  <body>
+    <div class="header">
+      <p>1/16</p>
+      <h1>Vos informations</h1>
+    </div>
+    <form action="">
+      <div class="form">
+        <div>
+          <label for="firstName">PRENOM</label>
+          <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            placeholder="Donnez votre réponse ici"
+            required
+          />
+        </div>
+        <div>
+          <label for="name">NOM</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Donnez votre réponse ici"
+            required
+          />
+        </div>
+        <div>
+          <label for="address">ADRESSE COMPLETE</label>
+          <input
+            type="text"
+            id="address"
+            name="address"
+            placeholder="Donnez votre réponse ici"
+            required
+          />
+        </div>
+        <div class="BirthDate-container">
+          <label for="BirthDate">DATE DE NAISSANCE</label>
+          <input
+            type="date"
+            id="BirthDate"
+            name="BirthDate"
+            placeholder="--/--/----"
+            required
+          />
+        </div>
+        <div>
+          <label for="PhoneNumber">NUMERO DE TELEPHONE</label>
+          <div style="width: 100%">
+            <div class="phoneNumber-container">
+              <img
+                class="prefix-flag"
+                src="assets/icons/france.png"
+                alt="drapeau"
+              />
+              <img
+                class="prefix-arrows"
+                src="assets/icons/arrows.png"
+                alt="arrows"
+              />
+              <select id="selectPrefix" class="selectPrefix" name="prefix">
+                <option value="+33">
+                  <span
+                    >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
+                  >+33
+                </option>
+                <option value="+1">+1</option>
+                <option value="+44">+44</option>
+              </select>
+            </div>
+            <div class="input-container">
+              <input
+                type="tel"
+                id="PhoneNumber"
+                name="PhoneNumber"
+                placeholder="06 01 02 03 04"
+                required
+              />
+            </div>
+          </div>
+        </div>
+        <div>
+          <label for="answer-yes answer-no">QUESTION A CHOIX MULTIPLES</label>
+          <div>
+            <input id="answer-yes" type="radio" name="answer" />
+            <label for="answer-yes">Oui</label>
+          </div>
+          <div>
+            <input id="answer-no" type="radio" name="answer" />
+            <label for="answer-no">Non</label>
+          </div>
+        </div>
+        <div>
+          <label for="mail">ADRESSE MAIL</label>
+          <input
+            type="email"
+            id="e-mail"
+            name="e-mail"
+            placeholder="Donnez votre réponse ici"
+            required
+          />
+        </div>
+        <div class="toggle-container">
+          <p>
+            <strong> Voulez-vous recevoir les notifications mail ?</strong>
+          </p>
+          <div class="toggle">
+            <input type="checkbox" id="toggle" checked />
+            <label for="toggle"></label>
+          </div>
+        </div>
+        <div class="file-input-container">
+          <label for="file">PIECE D'IDENDITE</label>
+          <div class="uploader">
+            <div class="upload-wrapper">
+              <img src="assets/icons/telecharger.png" alt="telecharger" />
+              <p>Glissez votre fichier dans cette zone</p>
+            </div>
+            <input id="file" name="file" type="file" />
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="form-footer">
+        <button class="submit-btn">Suivant</button>
+      </div>
+    </form>
+    <script src="script.js"></script>
+  </body>
+</html>
