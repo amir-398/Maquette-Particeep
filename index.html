@@ -4,141 +4,146 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Maquette-Particeep</title>
+    <title>Maquette Particeep</title>
   </head>
   <body>
-    <div class="header">
-      <div class="progression-bar">
-        <div class="progression"></div>
+    <header>
+      <div class="header">
+        <div class="progression-bar">
+          <div class="progression"></div>
+        </div>
+        <p>1/16</p>
+        <h1>Vos informations</h1>
       </div>
-      <p>1/16</p>
-      <h1>Vos informations</h1>
-    </div>
-    <form action="">
-      <div class="form">
-        <div class="input-group">
-          <label for="firstName">PRÉNOM *</label>
-          <input
-            type="text"
-            id="firstName"
-            name="firstName"
-            placeholder="Donnez votre réponse ici"
-            required
-          />
-        </div>
-        <div class="input-group">
-          <label for="name">NOM *</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Donnez votre réponse ici"
-            required
-          />
-        </div>
-        <div class="input-group">
-          <label for="address">ADRESSE COMPLÈTE *</label>
-          <input
-            type="text"
-            id="address"
-            name="address"
-            placeholder="Donnez votre réponse ici"
-            required
-          />
-        </div>
-        <div class="input-group birthDate-container">
-          <label for="BirthDate">DATE DE NAISSANCE *</label>
-          <input
-            type="date"
-            id="birthDate"
-            name="birthDate"
-            placeholder="--/--/----"
-            required
-          />
-        </div>
-        <div class="input-group">
-          <label for="PhoneNumber">NUMERO DE TÉLÉPHONE *</label>
-          <div style="width: 100%">
-            <div class="phoneNumber-container">
-              <img
-                class="prefix-flag"
-                src="assets/icons/france.png"
-                alt="drapeau"
-              />
-              <img
-                class="prefix-arrows"
-                src="assets/icons/arrows.png"
-                alt="arrows"
-              />
-              <select id="selectPrefix" class="selectPrefix" name="prefix">
-                <option value="+33">
-                  <span
-                    >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-                  >+33
-                </option>
-                <option value="+1">+1</option>
-                <option value="+44">+44</option>
-              </select>
-            </div>
-            <div class="input-container">
-              <input
-                type="tel"
-                id="phoneNumber"
-                name="phoneNumber"
-                placeholder="06 01 02 03 04"
-                required
-              />
+    </header>
+    <main>
+      <form action="">
+        <div class="form">
+          <div class="input-group">
+            <label for="firstName">PRÉNOM *</label>
+            <input
+              type="text"
+              id="firstName"
+              name="firstName"
+              placeholder="Donnez votre réponse ici"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <label for="name">NOM *</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Donnez votre réponse ici"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <label for="address">ADRESSE COMPLÈTE *</label>
+            <input
+              type="text"
+              id="address"
+              name="address"
+              placeholder="Donnez votre réponse ici"
+              required
+            />
+          </div>
+          <div class="input-group birthDate-container">
+            <label for="BirthDate">DATE DE NAISSANCE *</label>
+            <input
+              type="date"
+              id="birthDate"
+              name="birthDate"
+              placeholder="--/--/----"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <label for="PhoneNumber">NUMERO DE TÉLÉPHONE *</label>
+            <div style="width: 100%">
+              <div class="prefix-container">
+                <img
+                  class="prefix-flag"
+                  src="assets/icons/france.png"
+                  alt="drapeau"
+                />
+                <img
+                  class="prefix-arrows"
+                  src="assets/icons/arrows.png"
+                  alt="arrows"
+                />
+                <select id="selectPrefix" class="selectPrefix" name="prefix">
+                  <option value="+33">+33</option>
+                  <option value="+1">+1</option>
+                  <option value="+44">+44</option>
+                </select>
+              </div>
+              <div class="input-container">
+                <input
+                  type="tel"
+                  id="phoneNumber"
+                  name="phoneNumber"
+                  placeholder="06 01 02 03 04"
+                  required
+                />
+              </div>
             </div>
           </div>
-        </div>
-        <div class="input-group">
-          <label for="answer-yes answer-no">QUESTION À CHOIX MULTIPLES *</label>
-          <div>
-            <input id="answer-yes" type="radio" name="answer-yes" />
-            <label for="answer-yes">Oui</label>
-          </div>
-          <div>
-            <input id="answer-no" type="radio" name="answer-no" />
-            <label for="answer-no">Non</label>
-          </div>
-        </div>
-        <div class="input-group">
-          <label for="mail">ADRESSE MAIL *</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Donnez votre réponse ici"
-            required
-          />
-        </div>
-        <div class="input-group toggle-container">
-          <p>
-            <strong> Voulez-vous recevoir les notifications mail ?</strong>
-          </p>
-          <div class="toggle">
-            <input type="checkbox" id="toggle" name="checkbox" />
-            <label for="toggle"></label>
-          </div>
-        </div>
-        <div class="input-group file-input-container">
-          <label for="file">PIÈCE D'IDENDITÉ. *</label>
-          <div class="uploader">
-            <div class="upload-wrapper">
-              <img src="assets/icons/upload-cloud.png" alt="telecharger" />
-              <p>Glissez votre fichier dans cette zone</p>
+          <div class="input-group">
+            <label for="answer-yes answer-no"
+              >QUESTION À CHOIX MULTIPLES *</label
+            >
+            <div class="checkbox-container">
+              <input id="answer-yes" type="checkbox" name="answer-yes" />
+              <label for="answer-yes">Oui</label>
             </div>
-            <input id="file" name="file" type="file" />
+            <div class="checkbox-container">
+              <input id="answer-no" type="checkbox" name="answer-no" />
+              <label for="answer-no">Non</label>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="mail">ADRESSE MAIL *</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Donnez votre réponse ici"
+              required
+            />
+          </div>
+          <div class="input-group toggle-container">
+            <p>
+              <strong> Voulez-vous recevoir les notifications mail ?</strong>
+            </p>
+            <div class="toggle">
+              <input type="checkbox" id="toggle" name="checkbox" />
+              <label for="toggle"></label>
+            </div>
+          </div>
+          <div class="input-group file-input-container">
+            <label for="file">PIÈCE D'IDENTITÉ. *</label>
+            <div class="uploader">
+              <div class="upload-wrapper">
+                <img src="assets/icons/upload-cloud.png" alt="telecharger" />
+                <p>Glissez votre fichier dans cette zone</p>
+              </div>
+              <div class="files-info hide">
+                <img src="assets/icons/file-line.png" alt="file icon" />
+                <p>Glissez votre fichier dans cette zone</p>
+              </div>
+              <input id="file" name="file" type="file" />
+            </div>
           </div>
         </div>
-      </div>
-      <hr />
-      <div class="form-footer">
-        <button class="submit-btn" disabled>
-          <a href="index2.html">Suivant</a>
-        </button>
-      </div>
-    </form>
+        <hr />
+        <div class="form-footer">
+          <a class="submit-btn disabled" href="#">Suivant</a>
+        </div>
+      </form>
+    </main>
+
     <script src="script.js"></script>
   </body>
 </html>

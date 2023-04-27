@@ -3,7 +3,7 @@ let userData = {
   name: "",
   address: "",
   birthday: "",
-  phoneNumber: "+33",
+  phoneNumber: "",
   multipleQ: {
     yes: false,
     no: false,
@@ -17,10 +17,12 @@ const inputs = document.querySelectorAll("input");
 const submit_btn = document.querySelector(".submit-btn");
 const datePickerContainer = document.querySelector(".birthDate-container");
 const datePicker = document.querySelector("#birthDate");
-datePicker.addEventListener("change", () => {
-  datePickerContainer.classList.add("selected");
-});
-console.log(datePicker);
+const upload_wrapper = document.querySelector(".upload-wrapper");
+const file_info = document.querySelector(".files-info");
+const file_info_p = document.querySelector(".files-info p");
+const checkbox = document.querySelectorAll(".checkbox-container input");
+const toggler = document.querySelector(".toggle-container input");
+
 // regex for validation
 const regex = new RegExp(/^[a-zA-ZÀ-ÿ]+([-'\s][a-zA-ZÀ-ÿ]+)*$/);
 const regexNumbers = new RegExp(/[0-9]\d{8}$/);
@@ -29,9 +31,31 @@ const regexMail = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/);
 const regexBrithday = new RegExp(
   /^(19|20)\d\d-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$/
 );
+
+// toggler mail notifications
+toggler.addEventListener("change", (e) => {
+  if (e.target.checked) {
+    userData.mailNotifications = true;
+  } else {
+    userData.mailNotifications = false;
+  }
+});
+
+// multiples questions
+checkbox.forEach((box) => {
+  box.addEventListener("change", (e) => {
+    if (e.target.name == "answer-yes") {
+      userData.multipleQ.yes = e.target.checked;
+    }
+    if (e.target.name == "answer-no") {
+      userData.multipleQ.no = e.target.checked;
+    }
+  });
+});
+
+// pick informations from form
 inputs.forEach((input) => {
   input.addEventListener("change", (e) => {
-    // pick informations from form
     if (e.target.name == "firstName") {
       regex.test(e.target.value)
         ? (userData.firstName = e.target.value)
@@ -49,9 +73,16 @@ inputs.forEach((input) => {
         ? (userData.birthday = e.target.value)
         : (userData.birthday = "");
     } else if (e.target.name == "phoneNumber") {
-      regexNumbers.test(e.target.value)
-        ? (userData.phoneNumber = e.target.value)
-        : (userData.phoneNumber = "");
+      if (
+        regexNumbers.test(e.target.value) &&
+        (e.target.value.length == 9 || e.target.value.length == 10)
+      ) {
+        if (e.target.value.charAt(0) == 0) {
+          userData.phoneNumber = "+33" + e.target.value.slice(1);
+        } else {
+          userData.phoneNumber = "+33" + e.target.value;
+        }
+      }
     } else if (e.target.name == "email") {
       regexMail.test(e.target.value)
         ? (userData.email = e.target.value)
@@ -60,11 +91,13 @@ inputs.forEach((input) => {
       userData.multipleQ.yes = e.target.checked;
     } else if (e.target.name == "answer-no") {
       userData.multipleQ.no = e.target.checked;
-    } else if (e.target.name == "checkbox") {
-      userData.mailNotifications = e.target.checked;
     } else if (e.target.name == "file") {
       userData.identity_doc = e.target.files[0];
+      upload_wrapper.classList.add("hide");
+      file_info.classList.remove("hide");
+      file_info_p.innerHTML = e.target.files[0].name;
     }
+
     // form validation
     if (
       regex.test(userData.firstName) &&
@@ -81,48 +114,24 @@ inputs.forEach((input) => {
       isValid = false;
     }
     if (isValid) {
-      submit_btn.disabled = false;
+      submit_btn.classList.remove("disabled");
     } else {
-      submit_btn.disabled = true;
+      submit_btn.classList.add("disabled");
     }
   });
 });
-// ecouteur d'event du btn et transfert de donnée
-if (window.location.href.includes("index.html")) {
-  submit_btn.addEventListener("click", function () {
-    if (isValid) {
-      localStorage.setItem("userData", JSON.stringify(userData));
-      window.location.href = "index2.html";
-    }
-  });
-}
 
-// script pour la 2eme page
-window.addEventListener("DOMContentLoaded", function () {
-  const storedData = localStorage.getItem("userData");
-  if (storedData) {
-    const userData = JSON.parse(storedData);
-    const spans = document.querySelectorAll("span");
-    spans.forEach((span) => {
-      if (span.classList.contains("firstName")) {
-        span.innerHTML = userData.firstName;
-      }
-      if (span.classList.contains("name")) {
-        span.innerHTML = userData.name;
-      }
-      if (span.classList.contains("address")) {
-        span.innerHTML = userData.address;
-      }
-      if (span.classList.contains("birthday")) {
-        span.innerHTML = userData.birthday;
-      }
-      if (span.classList.contains("phoneNumber")) {
-        span.innerHTML = userData.phoneNumber;
-      }
-      if (span.classList.contains("email")) {
-        span.innerHTML = userData.email;
-      }
-    });
-    localStorage.removeItem("userData");
+// send info to step 2
+submit_btn.addEventListener("click", function () {
+  if (isValid) {
+    submit_btn.href = "/form_steps/step2/index.html";
+    localStorage.setItem("userData", JSON.stringify(userData));
+  } else {
+    alert("Veuillez remplir tous les champs");
   }
+});
+
+// handle date picker
+datePicker.addEventListener("change", () => {
+  datePickerContainer.classList.add("selected");
 });
